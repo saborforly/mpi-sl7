@@ -1,0 +1,591 @@
+load config file
+/junofs/users/liuyan/OEC/mpi
+load config file
+rundir = /junofs/users/liuyan/OEC/mpi/ProdTest
+log BaseThread add console handler
+log Registry add console handler
+*****************************************
+***     Welcome to SNiPER Python      ***
+*****************************************
+[2020-05-01 21:32:08,050] MainThread INFO: [Agent] Running on host: lxslc603.ihep.ac.cn
+[2020-05-01 21:32:08,051] MainThread DEBUG: [Agent] Start to connect to service <Default>
+log Worker_a1c54a6e-f6e9-4c58-b947-9cd62b94eb66 add console handler
+load config file
+--------------------Client init start--------------------
+[Client]: client initail...
+[Client_0]: support thread level= 3
+[Client] Find port file in path = /junofs/users/liuyan/OEC/mpi/ProdTest/port.txt
+[Client_0]: service found on port:<tag#0$description#lxslc603.ihep.ac.cn$port#46570$ifname#202.122.33.187$>
+[Client_0]: client connect to server, comm = -2080374783
+[Client_0]: recv thread start....
+--------------------Client 0 init finish--------------------
+[BaseThread]: create new thread : DistJET.BaseThread.HeartbeatThread
+[2020-05-01 21:32:08,075] MainThread DEBUG: BaseThread object created:HeartbeatThread
+[2020-05-01 21:32:08,076] MainThread INFO: [Agent] WorkerAgent run...
+[2020-05-01 21:32:08,076] DistJET.BaseThread.HeartbeatThread DEBUG: [HeartBeat] time stamp = 1588339928.076902
+[2020-05-01 21:32:08,077] MainThread INFO: [WorkerAgent] HeartBeat thread start...
+[2020-05-01 21:32:08,077] DistJET.BaseThread.HeartbeatThread DEBUG: [HeartBeat] Send msg = {1: {'capacity': 1}, 'flag': 'FP', 'ctime': 1588339928.076902, 'uuid': 'a1c54a6e-f6e9-4c58-b947-9cd62b94eb66'}
+[2020-05-01 21:32:08,180] MainThread INFO: [WorkerAgent] Receive Registry_ACK msg = {'wid': 1, 'init': <python.Task.Task object at 0x265d990>, 'wmp': None, 'uuid': 'a1c54a6e-f6e9-4c58-b947-9cd62b94eb66', 'appid': 0}
+[2020-05-01 21:32:08,180] MainThread WARNING: [Agent] No specific worker input, use default
+[2020-05-01 21:32:08,181] MainThread INFO: [Agent] init_task:<python.Task.Task object at 0x265d990>, boot=['. /junofs/users/liuyan/OEC/mpi/juno/setup.sh']
+[2020-05-01 21:32:08,181] MainThread INFO: [Agent] Start up worker and initialize
+[BaseThread]: create new thread : DistJET.BaseThread.worker_0
+[2020-05-01 21:32:08,181] MainThread DEBUG: BaseThread object created:Worker
+[2020-05-01 21:32:08,182] MainThread DEBUG: [Worker_0] Worker sniper log path:/junofs/users/liuyan/OEC/mpi/ProdTest/worker_0.log
+[2020-05-01 21:32:08,182] MainThread INFO: [Agent] Worker 0 start
+[2020-05-01 21:32:08,182] DistJET.BaseThread.worker_0 INFO: [Worker_0] Start to setup...
+[2020-05-01 21:32:08,183] MainThread DEBUG: [WorkerAgent] Wake up the heartbeat thread
+[2020-05-01 21:32:08,183] MainThread DEBUG: [Agent] All worker status = {0: 0}
+[2020-05-01 21:32:08,184] DistJET.BaseThread.HeartbeatThread DEBUG: [Agent] Running task = {0: []}
+[2020-05-01 21:32:08,184] DistJET.BaseThread.HeartbeatThread DEBUG: [HeartBeat] Send msg = {'wid': 1, 'uuid': 'a1c54a6e-f6e9-4c58-b947-9cd62b94eb66', 'wstatus': 0, 'Task': [], 'health': {}, 'rTask': {0: []}, 'ctime': 1588339928.184714}
+[2020-05-01 21:32:08,196] DistJET.BaseThread.worker_0 INFO: [Agent] Feed back app init result
+[2020-05-01 21:32:08,284] MainThread DEBUG: [Agent] Worker need more tasks, ask for new task
+[2020-05-01 21:32:08,285] MainThread DEBUG: [Agent] All worker status = {0: 12}
+[2020-05-01 21:32:08,385] MainThread DEBUG: [Agent] All worker status = {0: 12}
+[2020-05-01 21:32:08,394] DistJET.BaseThread.HeartbeatThread DEBUG: [Agent] Running task = {0: []}
+[2020-05-01 21:32:08,394] DistJET.BaseThread.HeartbeatThread DEBUG: [HeartBeat] Send msg = {'Task': [], 'uuid': 'a1c54a6e-f6e9-4c58-b947-9cd62b94eb66', 112: 1, 'wstatus': 12, 'wid': 1, 'health': {}, 120: {'errmsg': 'SUCCESS', 'recode': 0}, 'rTask': {0: []}, 'ctime': 1588339928.394699}
+[2020-05-01 21:32:08,487] MainThread INFO: [WorkerAgent] Add new task : [0]
+[2020-05-01 21:32:08,487] MainThread DEBUG: [Agent] Worker 0 IDLE, wake up worker
+[2020-05-01 21:32:08,487] MainThread DEBUG: [Agent] All worker status = {0: 12}
+[2020-05-01 21:32:08,488] DistJET.BaseThread.worker_0 INFO: worker 0 running task 0
+[2020-05-01 21:32:08,488] DistJET.BaseThread.worker_0 INFO: ####task.boost = ['cd /junofs/users/liuyan/OEC/mpi/ProdTest/res/Read/data_1/e+_1.0Mev', 'bash /junofs/users/liuyan/OEC/mpi/ProdTest/res/Read/data_1/e+_1.0Mev/read.sh', 'pwd'] and task.id= 0 ####
+[Task]task
+   +--[ATR]LogLevel   = 2
+   +--[ATR]IsTop      = 1
+   +--[ATR]EvtMax     = 1
+   +--[DataMemSvc]DataMemSvc
+   |     +--[ATR]LogLevel   = 2
+   +--[HltConfigSvc]HltConfigSvc
+   |     +--[ATR]LogLevel   = 2
+   |     +--[Var]VarString  = 
+   |     +--[Var]seqListFile = /junofs/users/liuyan/OEC/EventFilter/HltProcessor/HltConfig/share/defaultseqlist.xml
+   |     +--[Var]sigListFile = /junofs/users/liuyan/OEC/EventFilter/HltProcessor/HltConfig/share/defaultsiglist.xml
+   +--[HltStoreSvc]HltStoreSvc
+   |     +--[ATR]LogLevel   = 2
+   +--[StepSequencer]StepSequencer
+   |     +--[ATR]LogLevel   = 2
+   +--[StepDecision]StepDecision
+   |     +--[ATR]LogLevel   = 2
+   +--[StepHandler]StepHandler
+   |     +--[ATR]LogLevel   = 2
+   |     +--[Var]EventTypes = []
+   +--[ForMpi]ForMpi
+   |     +--[ATR]LogLevel   = 2
+HltConfigSvc.initialize       _INFO:  initialized start
+HltConfigSvc.initialize       _INFO: Seq File Path: /junofs/users/liuyan/OEC/EventFilter/HltProcessor/HltConfig/share/defaultseqlist.xml
+HltConfigSvc.buildSequenceList  _INFO: SEQUENCE
+HltConfigSvc.buildSequenceList  _INFO: HIT
+HltConfigSvc.buildSequenceList  _INFO: EFDetectorHits
+HltConfigSvc.buildSequenceList  _INFO: SEQUENCE
+HltConfigSvc.buildSequenceList  _INFO: EMC
+HltConfigSvc.buildSequenceList  _INFO: EFDetectorHits
+HltConfigSvc.buildSequenceList  _INFO: SEQUENCE
+HltConfigSvc.buildSequenceList  _INFO: MDC
+HltConfigSvc.buildSequenceList  _INFO: EFSectorHits
+SNiPER:NonName.print          _INFO: start Sequence
+SNiPER:NonName.print          _INFO: Sequence_id: HIT
+SNiPER:NonName.print          _INFO:  Algo(s): EFDetectorHits
+SNiPER:NonName.print          _INFO: end Sequence
+SNiPER:NonName.print          _INFO: start Sequence
+SNiPER:NonName.print          _INFO: Sequence_id: EMC
+SNiPER:NonName.print          _INFO:  Algo(s): EFDetectorHits
+SNiPER:NonName.print          _INFO: end Sequence
+SNiPER:NonName.print          _INFO: start Sequence
+SNiPER:NonName.print          _INFO: Sequence_id: MDC
+SNiPER:NonName.print          _INFO:  Algo(s): EFSectorHits
+SNiPER:NonName.print          _INFO: end Sequence
+HltConfigSvc.buildSignatureList  _INFO: SIGNATURE
+HltConfigSvc.buildSignatureList  _INFO: signature_id: HIT
+HltConfigSvc.buildSignatureList  _INFO: behaviour: jump
+HltConfigSvc.buildSignatureList  _INFO: item name: nmuc
+HltConfigSvc.buildSignatureList  _INFO: SIGNATURE
+HltConfigSvc.buildSignatureList  _INFO: signature_id: EMC
+HltConfigSvc.buildSignatureList  _INFO: behaviour: jump
+HltConfigSvc.buildSignatureList  _INFO: item name: etot
+HltConfigSvc.buildSignatureList  _INFO: behaviour: accept
+HltConfigSvc.buildSignatureList  _INFO: item name: ebal
+HltConfigSvc.buildSignatureList  _INFO: item name: nmuc
+HltConfigSvc.buildSignatureList  _INFO: item name: etot
+HltConfigSvc.buildSignatureList  _INFO: item name: etot
+HltConfigSvc.buildSignatureList  _INFO: behaviour: accept
+HltConfigSvc.buildSignatureList  _INFO: item name: etot
+HltConfigSvc.buildSignatureList  _INFO: behaviour: accept
+HltConfigSvc.buildSignatureList  _INFO: item name: etot
+HltConfigSvc.buildSignatureList  _INFO: SIGNATURE
+HltConfigSvc.buildSignatureList  _INFO: signature_id: MDC
+HltConfigSvc.buildSignatureList  _INFO: behaviour: accept
+HltConfigSvc.buildSignatureList  _INFO: item name: nsec
+SNiPER:NonName.print          _INFO: start signature
+SNiPER:NonName.print          _INFO: signature_id: HIT; prescale: 1; forcedAccept: 2
+SNiPER:NonName.print          _INFO: HltCriteria Behavior: jump_MDC
+SNiPER:NonName.print          _INFO: CriteriaItem: SNiPER:NonName.print          _INFO: CriteriaItem: nmuc - 888 - MAX - 0
+SNiPER:NonName.print          _INFO: end signature
+SNiPER:NonName.print          _INFO: start signature
+SNiPER:NonName.print          _INFO: signature_id: EMC; prescale: 1; forcedAccept: 2
+SNiPER:NonName.print          _INFO: HltCriteria Behavior: jump_MDC
+SNiPER:NonName.print          _INFO: CriteriaItem: SNiPER:NonName.print          _INFO: CriteriaItem: etot - 0.2 - MAX - 1
+SNiPER:NonName.print          _INFO: HltCriteria Behavior: accept_GHadron
+SNiPER:NonName.print          _INFO: CriteriaItem: SNiPER:NonName.print          _INFO: CriteriaItem: ebal - 0.6 - MAX - 2
+SNiPER:NonName.print          _INFO: CriteriaItem: nmuc - 5 - MAX - 3
+SNiPER:NonName.print          _INFO: CriteriaItem: etot - 0.76 - MAX - 4
+SNiPER:NonName.print          _INFO: CriteriaItem: etot - 0.325 - MIN - 5
+SNiPER:NonName.print          _INFO: HltCriteria Behavior: accept_Hadron
+SNiPER:NonName.print          _INFO: CriteriaItem: SNiPER:NonName.print          _INFO: CriteriaItem: etot - 0.76 - MAX - 6
+SNiPER:NonName.print          _INFO: HltCriteria Behavior: accept_Error
+SNiPER:NonName.print          _INFO: CriteriaItem: SNiPER:NonName.print          _INFO: CriteriaItem: etot - 1.4 - MIN - 7
+SNiPER:NonName.print          _INFO: end signature
+SNiPER:NonName.print          _INFO: start signature
+SNiPER:NonName.print          _INFO: signature_id: MDC; prescale: 1; forcedAccept: 2
+SNiPER:NonName.print          _INFO: HltCriteria Behavior: accept_Hadron
+SNiPER:NonName.print          _INFO: CriteriaItem: SNiPER:NonName.print          _INFO: CriteriaItem: nsec - 888 - MAX - 8
+SNiPER:NonName.print          _INFO: end signature
+HltConfigSvc.makeTableVector  _INFO: Pair(Sig: HIT--Seq: HIT)
+HltConfigSvc.makeTableVector  _INFO: Pair(Sig: EMC--Seq: EMC)
+HltConfigSvc.makeTableVector  _INFO: Pair(Sig: MDC--Seq: MDC)
+HltConfigSvc.initialize       _INFO:  initialized successfully
+HltStoreSvc.initialize        _INFO: Start of run initialisation
+StepSequencer.initialize      _INFO: !!!StepSequencer intialize!!!
+StepSequencer.initSequencer   _INFO: DEBUG Sequence HIT has 1 algorithms 
+StepSequencer.initSequencer   _INFO: DEBUG algorithm    : EFDetectorHits
+StepSequencer.initSequencer   _INFO: DEBUG created algorithm:EFDetectorHits!
+EFDetectorHits.initialize     _INFO:  Number of hits in MDC:EMC:MUC:TOF is 1:1:1:1;  random number:1.22
+EFDetectorHits.initialize     _INFO: setValue
+EFDetectorHits.initialize     _INFO: m_ef
+EFDetectorHits.initialize     _INFO: EFDetectorHits initialized
+StepSequencer.initSequencer   _INFO:  Initialization successfully
+StepDecision.initDecision     _INFO:  Find Signature with ID: HIT
+StepSequencer.initSequencer   _INFO: DEBUG Sequence EMC has 1 algorithms 
+StepSequencer.initSequencer   _INFO: DEBUG algorithm    : EFDetectorHits
+StepSequencer.initSequencer   _INFO: DEBUG created algorithm:EFDetectorHits!
+EFDetectorHits.initialize     _INFO:  Number of hits in MDC:EMC:MUC:TOF is 1:1:1:1;  random number:1.22
+EFDetectorHits.initialize     _INFO: setValue
+EFDetectorHits.initialize     _INFO: m_ef
+EFDetectorHits.initialize     _INFO: EFDetectorHits initialized
+StepSequencer.initSequencer   _INFO:  Initialization successfully
+StepDecision.initDecision     _INFO:  Find Signature with ID: EMC
+StepSequencer.initSequencer   _INFO: DEBUG Sequence MDC has 1 algorithms 
+StepSequencer.initSequencer   _INFO: DEBUG algorithm    : EFSectorHits
+StepSequencer.initSequencer   _INFO: DEBUG created algorithm:EFSectorHits!
+EFSectorHits.initialize       _INFO: in initialize()
+EFSectorHits.initialize       _INFO: finish initialize()
+EFSectorHits.initialize       _INFO: Number of nsec is: 10.1
+EFSectorHits.initialize       _INFO: EFSectorHits initialize()
+StepSequencer.initSequencer   _INFO:  Initialization successfully
+StepDecision.initDecision     _INFO:  Find Signature with ID: MDC
+StepHandler.initialize        _INFO: Initialization  completed successfully
+ForMpi.initialize             _INFO: ForMpi initialized
+task.initialize               _INFO: initialized
+StepSequencer.execute         _INFO: !!!!StepSequencer  execute !!!!!
+StepHandler.execute           DEBUG: *** Executing StepHandler *** 
+StepHandler.execute           DEBUG: In step HIT
+StepSequencer.execSequencer   _INFO: DEBUG =============================
+EFDetectorHits.execute        _INFO: get(nmdc): 1
+EFDetectorHits.execute        _INFO: hsSvc->put(nmdc) right
+StepHandler.execute           DEBUG: +++++++++++++++++++++++++++++
+StepDecision.execDecision     _INFO:  Decision execute: HIT
+SNiPER:NonName.isCriteriaMatched  _INFO:  criteriaVec size: 1
+SNiPER:NonName.satisfyCriteria  _INFO:  items size: 1
+SNiPER:NonName.satisfyCriteria  _INFO: item_name: nmuc
+SNiPER:NonName.satisfyCriteria  _INFO:  items value: 1
+StepHandler.execute           DEBUG: StepDec: 0 ,midAnswer:
+StepHandler.execute           DEBUG:  Matched Criteria, Behaviour = jump_MDC
+StepHandler.execute           DEBUG: In step MDC
+StepSequencer.execSequencer   _INFO: DEBUG =============================
+EFSectorHits.execute          _INFO: get(nsec): 10.1
+EFSectorHits.execute          _INFO: put(nsec) right
+StepHandler.execute           DEBUG: +++++++++++++++++++++++++++++
+StepDecision.execDecision     _INFO:  Decision execute: MDC
+SNiPER:NonName.isCriteriaMatched  _INFO:  criteriaVec size: 1
+SNiPER:NonName.satisfyCriteria  _INFO:  items size: 1
+SNiPER:NonName.satisfyCriteria  _INFO: item_name: nsec
+SNiPER:NonName.satisfyCriteria  _INFO:  items value: 10.1
+StepHandler.execute           DEBUG: StepDec: 5 ,midAnswer:
+StepHandler.execute           DEBUG:  Matched Criteria, Behaviour = accept_Hadron
+StepHandler.execute           DEBUG: ==============-1
+StepHandler.execute           DEBUG:  Event is Accepted as Hadron
+StepHandler.execute           DEBUG: ==============-1
+ForMpi.execute                _INFO: have Value
+ForMpi.execute                _INFO: have Value
+ForMpi.execute                _INFO: have Value
+ForMpi.execute                _INFO: ForMpi execute!
+#########
+{[2020-05-01 21:32:08,812] MainThread DEBUG: [Agent] All worker status = {0: 5}
+'behaviour': 'Accepted', 'tag': 'Hadron', 'evtFile': '/junofs/users/liuyan/OEC/EventFilter/HltProcessor/'}
+ForMpi.finalize               _INFO: in finalize()
+StepSequencer.finalize        _INFO: !!!!StepSequencer  finalize!!!!!
+HltConfigSvc.finalize         _INFO:  finalized successfully
+task.finalize                 _INFO: finalized
+[Task]task
+   +--[ATR]LogLevel   = 2
+   +--[ATR]IsTop      = 1
+   +--[ATR]EvtMax     = 1
+   +--[DataMemSvc]DataMemSvc
+   |     +--[ATR]LogLevel   = 2
+   +--[HltConfigSvc]HltConfigSvc
+   |     +--[ATR]LogLevel   = 2
+   |     +--[Var]VarString  = 
+   |     +--[Var]seqListFile = /junofs/users/liuyan/OEC/EventFilter/HltProcessor/HltConfig/share/defaultseqlist.xml
+   |     +--[Var]sigListFile = /junofs/users/liuyan/OEC/EventFilter/HltProcessor/HltConfig/share/defaultsiglist.xml
+   +--[HltStoreSvc]HltStoreSvc
+   |     +--[ATR]LogLevel   = 2
+   +--[StepSequencer]StepSequencer
+   |     +--[ATR]LogLevel   = 2
+   +--[StepDecision]StepDecision
+   |     +--[ATR]LogLevel   = 2
+   +--[StepHandler]StepHandler
+   |     +--[ATR]LogLevel   = 2
+   |     +--[Var]EventTypes = []
+   +--[ForMpi]ForMpi
+   |     +--[ATR]LogLevel   = 2
+HltConfigSvc.initialize       _INFO:  initialized start
+HltConfigSvc.initialize       _INFO: Seq File Path: /junofs/users/liuyan/OEC/EventFilter/HltProcessor/HltConfig/share/defaultseqlist.xml
+HltConfigSvc.buildSequenceList  _INFO: SEQUENCE
+HltConfigSvc.buildSequenceList  _INFO: HIT
+HltConfigSvc.buildSequenceList  _INFO: EFDetectorHits
+HltConfigSvc.buildSequenceList  _INFO: SEQUENCE
+HltConfigSvc.buildSequenceList  _INFO: EMC
+HltConfigSvc.buildSequenceList  _INFO: EFDetectorHits
+HltConfigSvc.buildSequenceList  _INFO: SEQUENCE
+HltConfigSvc.buildSequenceList  _INFO: MDC
+HltConfigSvc.buildSequenceList  _INFO: EFSectorHits
+SNiPER:NonName.print          _INFO: start Sequence
+SNiPER:NonName.print          _INFO: Sequence_id: HIT
+SNiPER:NonName.print          _INFO:  Algo(s): EFDetectorHits
+SNiPER:NonName.print          _INFO: end Sequence
+SNiPER:NonName.print          _INFO: start Sequence
+SNiPER:NonName.print          _INFO: Sequence_id: EMC
+SNiPER:NonName.print          _INFO:  Algo(s): EFDetectorHits
+SNiPER:NonName.print          _INFO: end Sequence
+SNiPER:NonName.print          _INFO: start Sequence
+SNiPER:NonName.print          _INFO: Sequence_id: MDC
+SNiPER:NonName.print          _INFO:  Algo(s): EFSectorHits
+SNiPER:NonName.print          _INFO: end Sequence
+HltConfigSvc.buildSignatureList  _INFO: SIGNATURE
+HltConfigSvc.buildSignatureList  _INFO: signature_id: HIT
+HltConfigSvc.buildSignatureList  _INFO: behaviour: jump
+HltConfigSvc.buildSignatureList  _INFO: item name: nmuc
+HltConfigSvc.buildSignatureList  _INFO: SIGNATURE
+HltConfigSvc.buildSignatureList  _INFO: signature_id: EMC
+HltConfigSvc.buildSignatureList  _INFO: behaviour: jump
+HltConfigSvc.buildSignatureList  _INFO: item name: etot
+HltConfigSvc.buildSignatureList  _INFO: behaviour: accept
+HltConfigSvc.buildSignatureList  _INFO: item name: ebal
+HltConfigSvc.buildSignatureList  _INFO: item name: nmuc
+HltConfigSvc.buildSignatureList  _INFO: item name: etot
+HltConfigSvc.buildSignatureList  _INFO: item name: etot
+HltConfigSvc.buildSignatureList  _INFO: behaviour: accept
+HltConfigSvc.buildSignatureList  _INFO: item name: etot
+HltConfigSvc.buildSignatureList  _INFO: behaviour: accept
+HltConfigSvc.buildSignatureList  _INFO: item name: etot
+HltConfigSvc.buildSignatureList  _INFO: SIGNATURE
+HltConfigSvc.buildSignatureList  _INFO: signature_id: MDC
+HltConfigSvc.buildSignatureList  _INFO: behaviour: accept
+HltConfigSvc.buildSignatureList  _INFO: item name: nsec
+SNiPER:NonName.print          _INFO: start signature
+SNiPER:NonName.print          _INFO: signature_id: HIT; prescale: 1; forcedAccept: 2
+SNiPER:NonName.print          _INFO: HltCriteria Behavior: jump_MDC
+SNiPER:NonName.print          _INFO: CriteriaItem: SNiPER:NonName.print          _INFO: CriteriaItem: nmuc - 888 - MAX - 0
+SNiPER:NonName.print          _INFO: end signature
+SNiPER:NonName.print          _INFO: start signature
+SNiPER:NonName.print          _INFO: signature_id: EMC; prescale: 1; forcedAccept: 2
+SNiPER:NonName.print          _INFO: HltCriteria Behavior: jump_MDC
+SNiPER:NonName.print          _INFO: CriteriaItem: SNiPER:NonName.print          _INFO: CriteriaItem: etot - 0.2 - MAX - 1
+SNiPER:NonName.print          _INFO: HltCriteria Behavior: accept_GHadron
+SNiPER:NonName.print          _INFO: CriteriaItem: SNiPER:NonName.print          _INFO: CriteriaItem: ebal - 0.6 - MAX - 2
+SNiPER:NonName.print          _INFO: CriteriaItem: nmuc - 5 - MAX - 3
+SNiPER:NonName.print          _INFO: CriteriaItem: etot - 0.76 - MAX - 4
+SNiPER:NonName.print          _INFO: CriteriaItem: etot - 0.325 - MIN - 5
+SNiPER:NonName.print          _INFO: HltCriteria Behavior: accept_Hadron
+SNiPER:NonName.print          _INFO: CriteriaItem: SNiPER:NonName.print          _INFO: CriteriaItem: etot - 0.76 - MAX - 6
+SNiPER:NonName.print          _INFO: HltCriteria Behavior: accept_Error
+SNiPER:NonName.print          _INFO: CriteriaItem: SNiPER:NonName.print          _INFO: CriteriaItem: etot - 1.4 - MIN - 7
+SNiPER:NonName.print          _INFO: end signature
+SNiPER:NonName.print          _INFO: start signature
+SNiPER:NonName.print          _INFO: signature_id: MDC; prescale: 1; forcedAccept: 2
+SNiPER:NonName.print          _INFO: HltCriteria Behavior: accept_Hadron
+SNiPER:NonName.print          _INFO: CriteriaItem: SNiPER:NonName.print          _INFO: CriteriaItem: nsec - 888 - MAX - 8
+SNiPER:NonName.print          _INFO: end signature
+HltConfigSvc.makeTableVector  _INFO: Pair(Sig: HIT--Seq: HIT)
+HltConfigSvc.makeTableVector  _INFO: Pair(Sig: EMC--Seq: EMC)
+HltConfigSvc.makeTableVector  _INFO: Pair(Sig: MDC--Seq: MDC)
+HltConfigSvc.initialize       _INFO:  initialized successfully
+HltStoreSvc.initialize        _INFO: Start of run initialisation
+StepSequencer.initialize      _INFO: !!!StepSequencer intialize!!!
+StepSequencer.initSequencer   _INFO: DEBUG Sequence HIT has 7274612 algorithms 
+StepSequencer.initSequencer   _INFO: DEBUG algorithm    : EFDetectorHits
+StepSequencer.initSequencer   _INFO: DEBUG created algorithm:EFDetectorHits!
+EFDetectorHits.initialize     _INFO:  Number of hits in MDC:EMC:MUC:TOF is 1:1:1:1;  random number:1.22
+EFDetectorHits.initialize     _INFO: setValue
+EFDetectorHits.initialize     _INFO: m_ef
+EFDetectorHits.initialize     _INFO: EFDetectorHits initialized
+StepSequencer.initSequencer   _INFO:  Initialization successfully
+StepDecision.initDecision     _INFO:  Find Signature with ID: HIT
+StepSequencer.initSequencer   _INFO: DEBUG Sequence EMC has 1 algorithms 
+StepSequencer.initSequencer   _INFO: DEBUG algorithm    : EFDetectorHits
+StepSequencer.initSequencer   _INFO: DEBUG created algorithm:EFDetectorHits!
+EFDetectorHits.initialize     _INFO:  Number of hits in MDC:EMC:MUC:TOF is 1:1:1:1;  random number:1.22
+EFDetectorHits.initialize     _INFO: setValue
+EFDetectorHits.initialize     _INFO: m_ef
+EFDetectorHits.initialize     _INFO: EFDetectorHits initialized
+StepSequencer.initSequencer   _INFO:  Initialization successfully
+StepDecision.initDecision     _INFO:  Find Signature with ID: EMC
+StepSequencer.initSequencer   _INFO: DEBUG Sequence MDC has 1 algorithms 
+StepSequencer.initSequencer   _INFO: DEBUG algorithm    : EFSectorHits
+StepSequencer.initSequencer   _INFO: DEBUG created algorithm:EFSectorHits!
+EFSectorHits.initialize       _INFO: in initialize()
+EFSectorHits.initialize       _INFO: finish initialize()
+EFSectorHits.initialize       _INFO: Number of nsec is: 10.1
+EFSectorHits.initialize       _INFO: EFSectorHits initialize()
+StepSequencer.initSequencer   _INFO:  Initialization successfully
+StepDecision.initDecision     _INFO:  Find Signature with ID: MDC
+StepHandler.initialize        _INFO: Initialization  completed successfully
+ForMpi.initialize             _INFO: ForMpi initialized
+task.initialize               _INFO: initialized
+StepSequencer.execute         _INFO: !!!!StepSequencer  execute !!!!!
+StepHandler.execute           DEBUG: *** Executing StepHandler *** 
+StepHandler.execute           DEBUG: In step HIT
+StepSequencer.execSequencer   _INFO: DEBUG =============================
+EFDetectorHits.execute        _INFO: get(nmdc): 1
+EFDetectorHits.execute        _INFO: hsSvc->put(nmdc) right
+StepHandler.execute           DEBUG: +++++++++++++++++++++++++++++
+StepDecision.execDecision     _INFO:  Decision execute: HIT
+SNiPER:NonName.isCriteriaMatched  _INFO:  criteriaVec size: 1
+SNiPER:NonName.satisfyCriteria  _INFO:  items size: 1
+SNiPER:NonName.satisfyCriteria  _INFO: item_name: nmuc
+SNiPER:NonName.satisfyCriteria  _INFO:  items value: 1
+StepHandler.execute           DEBUG: StepDec: 0 ,midAnswer:
+StepHandler.execute           DEBUG:  Matched Criteria, Behaviour = jump_MDC
+StepHandler.execute           DEBUG: In step MDC
+StepSequencer.execSequencer   _INFO: DEBUG =============================
+EFSectorHits.execute          _INFO: get(nsec): 10.1
+EFSectorHits.execute          _INFO: put(nsec) right
+StepHandler.execute           DEBUG: +++++++++++++++++++++++++++++
+StepDecision.execDecision     _INFO:  Decision execute: MDC
+SNiPER:NonName.isCriteriaMatched  _INFO:  criteriaVec size: 1
+SNiPER:NonName.satisfyCriteria  _INFO:  items size: 1
+SNiPER:NonName.satisfyCriteria  _INFO: item_name: nsec
+SNiPER:NonName.satisfyCriteria  _INFO:  items value: 10.1
+StepHandler.execute           DEBUG: StepDec: 5 ,midAnswer:
+StepHandler.execute           DEBUG:  Matched Criteria, Behaviour = accept_Hadron
+StepHandler.execute           DEBUG: ==============-1
+StepHandler.execute           DEBUG:  Event is Accepted as Hadron
+StepHandler.execute           DEBUG: ==============-1
+ForMpi.execute                _INFO: have Value
+ForMpi.execute                _INFO: have Value
+ForMpi.execute                _INFO: have Value
+ForMpi.execute                _INFO: ForMpi execute!
+#########
+{'behaviour': 'Accepted', 'tag': 'Hadron', 'evtFile': '/junofs/users/liuyan/OEC/EventFilter/HltProcessor/'}
+ForMpi.finalize               _INFO: in finalize()
+StepSequencer.finalize        _INFO: !!!!StepSequencer  finalize!!!!!
+HltConfigSvc.finalize         _INFO:  finalized successfully
+task.finalize                 _INFO: finalized
+[Task]task
+   +--[ATR]LogLevel   = 2
+   +--[ATR]IsTop      = 1
+   +--[ATR]EvtMax     = 1
+   +--[DataMemSvc]DataMemSvc
+   |     +--[ATR]LogLevel   = 2
+   +--[HltConfigSvc]HltConfigSvc
+   |     +--[ATR]LogLevel   = 2
+   |     +--[Var]VarString  = 
+   |     +--[Var]seqListFile = /junofs/users/liuyan/OEC/EventFilter/HltProcessor/HltConfig/share/defaultseqlist.xml
+   |     +--[Var]sigListFile = /junofs/users/liuyan/OEC/EventFilter/HltProcessor/HltConfig/share/defaultsiglist.xml
+   +--[HltStoreSvc]HltStoreSvc
+   |     +--[ATR]LogLevel   = 2
+   +--[StepSequencer]StepSequencer
+   |     +--[ATR]LogLevel   = 2
+   +--[StepDecision]StepDecision
+   |     +--[ATR]LogLevel   = 2
+   +--[StepHandler]StepHandler
+   |     +--[ATR]LogLevel   = 2
+   |     +--[Var]EventTypes = []
+   +--[ForMpi]ForMpi
+   |     +--[ATR]LogLevel   = 2
+HltConfigSvc.initialize       _INFO:  initialized start
+HltConfigSvc.initialize       _INFO: Seq File Path: /junofs/users/liuyan/OEC/EventFilter/HltProcessor/HltConfig/share/defaultseqlist.xml
+HltConfigSvc.buildSequenceList  _INFO: SEQUENCE
+HltConfigSvc.buildSequenceList  _INFO: HIT
+HltConfigSvc.buildSequenceList  _INFO: EFDetectorHits
+HltConfigSvc.buildSequenceList  _INFO: SEQUENCE
+HltConfigSvc.buildSequenceList  _INFO: EMC
+HltConfigSvc.buildSequenceList  _INFO: EFDetectorHits
+HltConfigSvc.buildSequenceList  _INFO: SEQUENCE
+HltConfigSvc.buildSequenceList  _INFO: MDC
+HltConfigSvc.buildSequenceList  _INFO: EFSectorHits
+SNiPER:NonName.print          _INFO: start Sequence
+SNiPER:NonName.print          _INFO: Sequence_id: HIT
+SNiPER:NonName.print          _INFO:  Algo(s): EFDetectorHits
+SNiPER:NonName.print          _INFO: end Sequence
+SNiPER:NonName.print          _INFO: start Sequence
+SNiPER:NonName.print          _INFO: Sequence_id: EMC
+SNiPER:NonName.print          _INFO:  Algo(s): EFDetectorHits
+SNiPER:NonName.print          _INFO: end Sequence
+SNiPER:NonName.print          _INFO: start Sequence
+SNiPER:NonName.print          _INFO: Sequence_id: MDC
+SNiPER:NonName.print          _INFO:  Algo(s): EFSectorHits
+SNiPER:NonName.print          _INFO: end Sequence
+HltConfigSvc.buildSignatureList  _INFO: SIGNATURE
+HltConfigSvc.buildSignatureList  _INFO: signature_id: HIT
+HltConfigSvc.buildSignatureList  _INFO: behaviour: jump
+HltConfigSvc.buildSignatureList  _INFO: item name: nmuc
+HltConfigSvc.buildSignatureList  _INFO: SIGNATURE
+HltConfigSvc.buildSignatureList  _INFO: signature_id: EMC
+HltConfigSvc.buildSignatureList  _INFO: behaviour: jump
+HltConfigSvc.buildSignatureList  _INFO: item name: etot
+HltConfigSvc.buildSignatureList  _INFO: behaviour: accept
+HltConfigSvc.buildSignatureList  _INFO: item name: ebal
+HltConfigSvc.buildSignatureList  _INFO: item name: nmuc
+HltConfigSvc.buildSignatureList  _INFO: item name: etot
+HltConfigSvc.buildSignatureList  _INFO: item name: etot
+HltConfigSvc.buildSignatureList  _INFO: behaviour: accept
+HltConfigSvc.buildSignatureList  _INFO: item name: etot
+HltConfigSvc.buildSignatureList  _INFO: behaviour: accept
+HltConfigSvc.buildSignatureList  _INFO: item name: etot
+HltConfigSvc.buildSignatureList  _INFO: SIGNATURE
+HltConfigSvc.buildSignatureList  _INFO: signature_id: MDC
+HltConfigSvc.buildSignatureList  _INFO: behaviour: accept
+HltConfigSvc.buildSignatureList  _INFO: item name: nsec
+SNiPER:NonName.print          _INFO: start signature
+SNiPER:NonName.print          _INFO: signature_id: HIT; prescale: 1; forcedAccept: 2
+SNiPER:NonName.print          _INFO: HltCriteria Behavior: jump_MDC
+SNiPER:NonName.print          _INFO: CriteriaItem: SNiPER:NonName.print          _INFO: CriteriaItem: nmuc - 888 - MAX - 0
+SNiPER:NonName.print          _INFO: end signature
+SNiPER:NonName.print          _INFO: start signature
+SNiPER:NonName.print          _INFO: signature_id: EMC; prescale: 1; forcedAccept: 2
+SNiPER:NonName.print          _INFO: HltCriteria Behavior: jump_MDC
+SNiPER:NonName.print          _INFO: CriteriaItem: SNiPER:NonName.print          _INFO: CriteriaItem: etot - 0.2 - MAX - 1
+SNiPER:NonName.print          _INFO: HltCriteria Behavior: accept_GHadron
+SNiPER:NonName.print          _INFO: CriteriaItem: SNiPER:NonName.print          _INFO: CriteriaItem: ebal - 0.6 - MAX - 2
+SNiPER:NonName.print          _INFO: CriteriaItem: nmuc - 5 - MAX - 3
+SNiPER:NonName.print          _INFO: CriteriaItem: etot - 0.76 - MAX - 4
+SNiPER:NonName.print          _INFO: CriteriaItem: etot - 0.325 - MIN - 5
+SNiPER:NonName.print          _INFO: HltCriteria Behavior: accept_Hadron
+SNiPER:NonName.print          _INFO: CriteriaItem: SNiPER:NonName.print          _INFO: CriteriaItem: etot - 0.76 - MAX - 6
+SNiPER:NonName.print          _INFO: HltCriteria Behavior: accept_Error
+SNiPER:NonName.print          _INFO: CriteriaItem: SNiPER:NonName.print          _INFO: CriteriaItem: etot - 1.4 - MIN - 7
+SNiPER:NonName.print          _INFO: end signature
+SNiPER:NonName.print          _INFO: start signature
+SNiPER:NonName.print          _INFO: signature_id: MDC; prescale: 1; forcedAccept: 2
+SNiPER:NonName.print          _INFO: HltCriteria Behavior: accept_Hadron
+SNiPER:NonName.print          _INFO: CriteriaItem: SNiPER:NonName.print          _INFO: CriteriaItem: nsec - 888 - MAX - 8
+SNiPER:NonName.print          _INFO: end signature
+HltConfigSvc.makeTableVector  _INFO: Pair(Sig: HIT--Seq: HIT)
+HltConfigSvc.makeTableVector  _INFO: Pair(Sig: EMC--Seq: EMC)
+HltConfigSvc.makeTableVector  _INFO: Pair(Sig: MDC--Seq: MDC)
+HltConfigSvc.initialize       _INFO:  initialized successfully
+HltStoreSvc.initialize        _INFO: Start of run initialisation
+StepSequencer.initialize      _INFO: !!!StepSequencer intialize!!!
+StepSequencer.initSequencer   _INFO: DEBUG Sequence HIT has 7274612 algorithms 
+StepSequencer.initSequencer   _INFO: DEBUG algorithm    : EFDetectorHits
+StepSequencer.initSequencer   _INFO: DEBUG created algorithm:EFDetectorHits!
+EFDetectorHits.initialize     _INFO:  Number of hits in MDC:EMC:MUC:TOF is 1:1:1:1;  random number:1.22
+EFDetectorHits.initialize     _INFO: setValue
+EFDetectorHits.initialize     _INFO: m_ef
+EFDetectorHits.initialize     _INFO: EFDetectorHits initialized
+StepSequencer.initSequencer   _INFO:  Initialization successfully
+StepDecision.initDecision     _INFO:  Find Signature with ID: HIT
+StepSequencer.initSequencer   _INFO: DEBUG Sequence EMC has 32763 algorithms 
+StepSequencer.initSequencer   _INFO: DEBUG algorithm    : EFDetectorHits
+StepSequencer.initSequencer   _INFO: DEBUG created algorithm:EFDetectorHits!
+EFDetectorHits.initialize     _INFO:  Number of hits in MDC:EMC:MUC:TOF is 1:1:1:1;  random number:1.22
+EFDetectorHits.initialize     _INFO: setValue
+EFDetectorHits.initialize     _INFO: m_ef
+EFDetectorHits.initialize     _INFO: EFDetectorHits initialized
+StepSequencer.initSequencer   _INFO:  Initialization successfully
+StepDecision.initDecision     _INFO:  Find Signature with ID: EMC
+StepSequencer.initSequencer   _INFO: DEBUG Sequence MDC has 2482 algorithms 
+StepSequencer.initSequencer   _INFO: DEBUG algorithm    : EFSectorHits
+StepSequencer.initSequencer   _INFO: DEBUG created algorithm:EFSectorHits!
+EFSectorHits.initialize       _INFO: in initialize()
+EFSectorHits.initialize       _INFO: finish initialize()
+EFSectorHits.initialize       _INFO: Number of nsec is: 10.1
+EFSectorHits.initialize       _INFO: EFSectorHits initialize()
+StepSequencer.initSequencer   _INFO:  Initialization successfully
+StepDecision.initDecision     _INFO:  Find Signature with ID: MDC
+StepHandler.initialize        _INFO: Initialization  completed successfully
+ForMpi.initialize             _INFO: ForMpi initialized
+task.initialize               _INFO: initialized
+StepSequencer.execute         _INFO: !!!!StepSequencer  execute !!!!!
+StepHandler.execute           DEBUG: *** Executing StepHandler *** 
+StepHandler.execute           DEBUG: In step HIT
+StepSequencer.execSequencer   _INFO: DEBUG =============================
+EFDetectorHits.execute        _INFO: get(nmdc): 1
+EFDetectorHits.execute        _INFO: hsSvc->put(nmdc) right
+StepHandler.execute           DEBUG: +++++++++++++++++++++++++++++
+StepDecision.execDecision     _INFO:  Decision execute: HIT
+SNiPER:NonName.isCriteriaMatched  _INFO:  criteriaVec size: 1
+SNiPER:NonName.satisfyCriteria  _INFO:  items size: 1
+SNiPER:NonName.satisfyCriteria  _INFO: item_name: nmuc
+SNiPER:NonName.satisfyCriteria  _INFO:  items value: 1
+StepHandler.execute           DEBUG: StepDec: 0 ,midAnswer:
+StepHandler.execute           DEBUG:  Matched Criteria, Behaviour = jump_MDC
+StepHandler.execute           DEBUG: In step MDC
+StepSequencer.execSequencer   _INFO: DEBUG =============================
+EFSectorHits.execute          _INFO: get(nsec): 10.1
+EFSectorHits.execute          _INFO: put(nsec) right
+StepHandler.execute           DEBUG: +++++++++++++++++++++++++++++
+StepDecision.execDecision     _INFO:  Decision execute: MDC
+SNiPER:NonName.isCriteriaMatched  _INFO:  criteriaVec size: 1
+SNiPER:NonName.satisfyCriteria  _INFO:  items size: 1
+SNiPER:NonName.satisfyCriteria  _INFO: item_name: nsec
+SNiPER:NonName.satisfyCriteria  _INFO:  items value: 10.1
+StepHandler.execute           DEBUG: StepDec: 5 ,midAnswer:
+StepHandler.execute           DEBUG:  Matched Criteria, Behaviour = accept_Hadron
+StepHandler.execute           DEBUG: ==============-1
+StepHandler.execute           DEBUG:  Event is Accepted as Hadron
+StepHandler.execute           DEBUG: ==============-1
+ForMpi.execute                _INFO: have Value
+ForMpi.execute                _INFO: have Value
+ForMpi.execute                _INFO: have Value
+ForMpi.execute                _INFO: ForMpi execute!
+#########
+{'behaviour': 'Accepted', 'tag': 'Hadron', 'evtFile': '/junofs/users/liuyan/OEC/EventFilter/HltProcessor/'}
+ForMpi.finalize               _INFO: in finalize()
+StepSequencer.finalize        _INFO: !!!!StepSequencer  finalize!!!!!
+HltConfigSvc.finalize         _INFO:  finalized successfully
+task.finalize                 _INFO: finalized
+[2020-05-01 21:32:08,851] Thread-1 INFO: [Worker_0] Task 0 finish, status=SUCCESS
+[2020-05-01 21:32:08,854] DistJET.BaseThread.worker_0 INFO: [Agent] Worker finish task 0
+[2020-05-01 21:32:08,923] MainThread DEBUG: [Agent] Worker need more tasks, ask for new task
+[2020-05-01 21:32:08,923] MainThread DEBUG: [Agent] All worker status = {0: 12}
+[2020-05-01 21:32:08,952] DistJET.BaseThread.HeartbeatThread DEBUG: [Agent] Running task = {0: []}
+[2020-05-01 21:32:08,952] DistJET.BaseThread.HeartbeatThread DEBUG: [HeartBeat] Send msg = {'wid': 1, 'uuid': 'a1c54a6e-f6e9-4c58-b947-9cd62b94eb66', 'wstatus': 5, 'Task': [], 'health': {}, 'rTask': {0: []}, 'ctime': 1588339928.952547}
+[2020-05-01 21:32:09,024] MainThread DEBUG: [Agent] All worker status = {0: 12}
+[2020-05-01 21:32:09,124] MainThread DEBUG: [Agent] All worker status = {0: 12}
+[2020-05-01 21:32:09,152] DistJET.BaseThread.HeartbeatThread DEBUG: [Agent] Running task = {0: []}
+[2020-05-01 21:32:09,153] DistJET.BaseThread.HeartbeatThread DEBUG: [HeartBeat] Send msg = {'Task': [<python.Task.Task object at 0x265de10>], 'uuid': 'a1c54a6e-f6e9-4c58-b947-9cd62b94eb66', 112: 1, 'wstatus': 12, 'wid': 1, 'health': {}, 'rTask': {0: []}, 'ctime': 1588339929.152977}
+[2020-05-01 21:32:09,226] MainThread INFO: [WorkerAgent] Receive APP_FIN msg = <python.Task.Task object at 0x265dfd0>
+[2020-05-01 21:32:09,226] MainThread DEBUG: [Agent] Wait for worker thread join
+[2020-05-01 21:32:09,226] MainThread DEBUG: [Agent] set fin_flag for all workers
+[2020-05-01 21:32:09,226] MainThread DEBUG: [Agent] Wake up idle worker 0
+[2020-05-01 21:32:09,227] MainThread DEBUG: [Agent] All worker status = {0: 12}
+[2020-05-01 21:32:09,227] DistJET.BaseThread.worker_0 DEBUG: [Worker_0] Finalize task = <python.Task.Task object at 0x265dfd0>
+[2020-05-01 21:32:09,227] DistJET.BaseThread.worker_0 DEBUG: [Worker_0] Ready to finalize, fin_task=<class 'python.Task.Task'>
+[2020-05-01 21:32:09,255] Thread-1 INFO: [Worker_0] Process finalize, status=SUCCESS
+[2020-05-01 21:32:09,256] Thread-1 INFO: [Agent] Worker 0 finalized, remove from list
+[2020-05-01 21:32:09,327] MainThread DEBUG: [Agent] Wait for master logout message
+[2020-05-01 21:32:09,328] MainThread DEBUG: [Agent] All worker status = {}
+[2020-05-01 21:32:09,355] DistJET.BaseThread.HeartbeatThread DEBUG: [Agent] Running task = {}
+[2020-05-01 21:32:09,355] DistJET.BaseThread.HeartbeatThread DEBUG: [HeartBeat] Send msg = {'wid': 1, 'uuid': 'a1c54a6e-f6e9-4c58-b947-9cd62b94eb66', 'wstatus': 10, 'Task': [], 'health': {}, 'rTask': {}, 'ctime': 1588339929.355432}
+[2020-05-01 21:32:09,428] MainThread DEBUG: [Agent] Wait for master logout message
+[2020-05-01 21:32:09,429] MainThread DEBUG: [Agent] All worker status = {}
+[2020-05-01 21:32:09,456] DistJET.BaseThread.HeartbeatThread DEBUG: [Agent] Running task = {}
+[2020-05-01 21:32:09,456] DistJET.BaseThread.HeartbeatThread DEBUG: [HeartBeat] Send msg = {'wid': 1, 'uuid': 'a1c54a6e-f6e9-4c58-b947-9cd62b94eb66', 'wstatus': 9, 'Task': [], 'health': {}, 122: {'errmsg': 'SUCCESS', 'recode': 0}, 'rTask': {}, 'ctime': 1588339929.456424}
+[2020-05-01 21:32:09,529] MainThread INFO: [WorkerAgent] Receive LOGOUT msg = 
+[2020-05-01 21:32:09,529] MainThread INFO: [WorkerAgent] HeartBeat stop...
+[2020-05-01 21:32:09,530] MainThread DEBUG: Stopping: HeartbeatThread
+[2020-05-01 21:32:09,557] DistJET.BaseThread.HeartbeatThread DEBUG: [HeartBeat] Send msg = {'Task': {}, 'uuid': 'a1c54a6e-f6e9-4c58-b947-9cd62b94eb66', 'flag': 'LP', 'wid': 1, 'health': {}, 'ctime': 1588339929.557432}
+--------------------stop Client 0--------------------
+[Client_0]: send complete...
+[Client_0]: recv thread stop, exit code=0
+[Client_0]: disconnected...
+--------------------Client 0 stop finish--------------------
+[2020-05-01 21:32:09,561] MainThread INFO: [WorkerAgent] Agent stop..., exit code = 0
+[2020-05-01 21:32:09,561] MainThread DEBUG: [Agent] Wait for master logout message
+[2020-05-01 21:32:09,561] MainThread DEBUG: [Agent] All worker status = {}
+[2020-05-01 21:32:09,562] MainThread DEBUG: [Agent] remains 3 alive thread, [[<_MainThread(MainThread, started 140714248533760)>, <SniperWorker(Thread-1, started daemon 140713798924032)>, <Worker(DistJET.BaseThread.worker_0, started daemon 140714022905600)>]]
+@agent: Agent exit, remains 3 thread running, threads list = [<_MainThread(MainThread, started 140714248533760)>, <SniperWorker(Thread-1, started daemon 140713798924032)>, <Worker(DistJET.BaseThread.worker_0, started daemon 140714022905600)>]
+
+***  SNiPER Terminated Successfully!  ***
+

@@ -1,0 +1,205 @@
+import time
+import types
+import os,sys
+import getpass
+sys.path.append(os.environ['DistJETPATH'])
+import threading
+import select
+import subprocess
+import psutil
+import Queue
+import traceback
+from Parser import Parser
+from python.Task import Task
+import python.Util.Config as Config
+from SniperPython import SniperPython 
+
+class status:
+    (SUCCESS, FAIL, TIMEOUT, OVERFLOW, ANR, UNKOWN) = range(0,6)
+    DES = {
+        SUCCESS: 'SUCCESS',
+        FAIL: 'Task fail, return code is not zero',
+        TIMEOUT: 'Run time exceeded',
+        OVERFLOW: 'Memory overflow',
+        ANR: 'No responding',
+        UNKOWN:'Unkown error'
+    }
+    @staticmethod
+    def describe(stat):
+        if status.DES.has_key(stat):
+            return status.DES[stat]
+
+class CommandPack:
+    def __init__(self, tid, command, task_log=None, proc_log=None,finalize_flag=False):
+        self.tid = tid
+        self.command=[]
+        if type(command) == types.ListType:
+            self.command.extend(command)
+        else:
+            self.command.append(command)
+        self.task_log = task_log
+        self.proc_log = proc_log
+        self.finalize_flag = finalize_flag
+
+#FIXME start a sh process, cannot know when the command finished
+class SniperWorker(threading.Thread):
+    def __init__(self,logpath, timeout=None,ignoreFail=False, task_callback=None, finalize_callback=None):
+        """
+        :param initial: the command of setup
+        :param timeout: select time out
+        :param ignoreFaile:
+        :param hook: when complete tasks, call this method
+        """
+        super(SniperWorker,self).__init__()
+
+        self.ignoreFail = ignoreFail
+        self.exec_queue_lock = threading.RLock()
+        self.executable = Queue.Queue()
+
+        self.log = open(logpath,'w+')
+        self.hook = task_callback
+        self.finalize_callback = finalize_callback
+
+        #Ready for heartbeat
+        self.stdout = subprocess.PIPE
+        self.stdin = subprocess.PIPE
+        self.process = psutil.Popen(['bash'], stdin=self.stdin, stdout=self.stdout, stderr=subprocess.STDOUT,preexec_fn=os.setsid)
+        self.pid = self.process.pid        
+
+        self.log.write('@sniper: start sniper for tasks, pid=%d\n'%self.pid)
+        self.log.flush()
+
+        self.timeout = timeout
+        self.recode = None
+        self.status = None
+
+        self.start_time = None
+        self.end = None
+        self.killed = None
+        self.fatalLine = None
+        self.logParser = Parser()
+
+        self.stop_flag = False
+        
+        self.tag_dict={}
+        
+        self.exit = False
+        self.TaskLogDir = Config.Config.getCFGattr('rundir')+'/task_log'
+        #print 'task dir= %s'%self.TaskLogDir
+        if not os.path.exists(self.TaskLogDir):
+            try:
+                os.mkdir(self.TaskLogDir)
+            except:
+                pass
+            
+    def stop(self,force=False):
+        #print "someone call stop\n"
+        self.stop_flag = True
+        self.process.wait()
+    def wait(self):
+        self.process.wait()
+    def set_task(self,task, genLog=True):
+        command_list=[]
+        if genLog:
+            tmp_list, errmsg= task.genCommand()
+            if errmsg:
+                self.log.write(errmsg+'\n')
+            command_list = []
+            for comm in tmp_list:
+                if not comm.endswith('\n'):
+                    comm+='\n'
+                command_list.append(comm)
+        else:
+            command_list.extend(task.boot)
+
+        task_log=self.TaskLogDir+'/task_'+str(task.tid)+'.tmp'
+
+        if genLog:
+            #print "res_dir=%s, tid=%s"%(task.res_dir,str(task.tid))
+            commpack = CommandPack(task.tid,command_list,task_log=task_log)
+        else:
+            commpack = CommandPack(task.tid,command_list,proc_log=self.log, finalize_flag=True)
+        self.executable.put(commpack)
+        self.log.write('[Proc] Add task command=%s, logfile=%s\n'%(commpack.command,str(commpack.task_log)+'|'+str(commpack.proc_log)))
+        self.log.flush()
+        
+    def finalize_and_cleanup(self, task):
+        self.exit = True
+        self.set_task(task,genLog=False)
+        
+    def run(self):
+        script_list = []
+        while not self.stop_flag:
+            try:
+                self.exec_queue_lock.acquire()
+                if not self.executable.empty():
+                    commpack = self.executable.get()
+                    self.exec_queue_lock.release()
+                    # for one task ,multi script
+                    # get script list from commpack
+                    script_list = commpack.command
+                    logfile = None
+                    if commpack.task_log:
+                        logfile = open(commpack.task_log, 'w+')
+                    elif commpack.proc_log:
+                        logfile = commpack.proc_log
+                    if commpack.finalize_flag:
+                        self.hook = self.finalize_callback
+                    #print "script_list = %s"%script_list
+                    sc_len = len(script_list)
+                    index = 0
+                    self.start = time.time()
+                    while len(script_list) != 0 and len(script_list) > index:
+                        script = script_list[index]
+                        index+=1
+                        
+                        if self.exit==True:
+                            print "<process> exiting..."
+                            logfile.write("[Proc] Ready to exit\n")
+                            logfile.flush()
+                            self.stop_flag=True
+                            break
+                        
+                        #Run task
+                        sniper_python = SniperPython(script)
+                        if sniper_python.finalize_flag:
+                            self.status = status.SUCCESS
+                            self.tag_dict[script]=sniper_python.tag
+                        
+                        self.recode=0
+                        self.log.write("\n index = %d \n script file = %s  tag = %s\n\n" % (index,script, self.tag_dict[script]))
+                        self.log.flush()                        
+                    self.end = time.time()
+                    self.log.write("\nstart time = %s ; end time = %s \n" % (time.asctime(time.localtime(self.start_time)), time.asctime(time.localtime(self.end))))
+                    #1 task do 1 hook
+                    if self.hook and callable(self.hook):
+                        self.hook(status.SUCCESS,0,self.start,self.end, os.path.abspath(logfile.name))
+
+                    if commpack.task_log:
+                        logfile.flush()
+                        logfile.close()
+
+                else:
+                    self.exec_queue_lock.release()
+                    time.sleep(0.1)
+            except Exception,e:
+                self.log.write('@Process catch error: %s\n'%e.message)
+                print traceback.format_exc()
+
+if __name__ == '__main__':
+    comm = ['$JUNOTESTROOT/python/JunoTest/junotest UnitTest Tutorial\n','$JUNOTESTROOT/python/JunoTest/junotest UnitTest JunoTest\n','$JUNOTESTROOT/python/JunoTest/junotest UnitTest Cf252\n','#exit#']
+    setup = 'source /afs/ihep.ac.cn/soft/juno/JUNO-ALL-SLC6/Pre-Release/J17v1r1-Pre2/setup.sh'
+    import logging
+    log = logging.getLogger('test.log')
+    with open('output.txt','w+') as output:
+        proc = SniperWorker(setup,output,log,hook=hook)
+        print "@proc setup recode=%d"%proc.initialize()
+        thread = threading.Thread(target=add,args=[proc,comm])
+        thread.start()
+        #proc.set_exe(comm)
+        print "proc.start = %s, thread.start=%s"%(proc.start,thread.start)
+        proc.start()
+        proc.join()
+
+    print '@proc finished'
+

@@ -1,0 +1,17 @@
+@Process: create process for tasks, pid= 16907
+[Setup_INFO] Setup Official Offline Software
+
+******************** script "echo $HOME" Running log ********************
+/afs/ihep.ac.cn/users/z/zhaobq
+
+return code = 0
+start time = Wed Oct 18 15:11:11 2017 
+end time = Wed Oct 18 15:11:11 2017@Process catch error: hook() takes exactly 2 arguments (4 given)
+******************** script "echo "hello world"" Running log ********************
+hello world
+
+return code = 0
+start time = Wed Oct 18 15:11:13 2017 
+end time = Wed Oct 18 15:11:13 2017@Process catch error: hook() takes exactly 2 arguments (4 given)
+******************** script "python ./wait.py" Running log ********************
+[Proc] Task no response, ready to kill@Process catch error: hook() takes exactly 2 arguments (4 given)

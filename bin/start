@@ -1,0 +1,71 @@
+#!/usr/bin/python
+import argparse
+import subprocess
+import os,sys
+import time
+assert os.environ.has_key("DistJETPATH_Client")
+sys.path.append(os.environ['DistJETPATH_Client'])
+
+DistTempDir = os.environ['DistJETPATH_Client']+'/DistJET'
+
+def getArgs():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-n","--worker-num",dest="worker_num", type=int,help="the number of worker you want to start") 
+    parser.add_argument("-s",dest="server_host", type=str,help="where to start name service")
+    parser.add_argument("-d",dest="log_level",action="store_true", default=False, help="debug mode")
+    parser.add_argument("-sc","--screen", dest="screen",action="store_true", default=True,help="print log output into screen")
+    parser.add_argument("--backend",dest="backend",choices=["condor","local"],default="local",help="Backend choice")
+    parser.add_argument('-t', dest="test",action="store_true",default=False,help="For test")
+    args = parser.parse_args()
+    if not args.worker_num:
+        print parser.error("less of  worker number")
+    return args
+
+#clear config
+if os.path.exists(DistTempDir+'/config.ini'):
+    os.remove(DistTempDir+'/config.ini')
+
+# check runtime environment
+import psutil,getpass,signal
+pid = [p.info['pid'] for p in psutil.process_iter(attrs=['pid','name','username']) if 'hydra_nameserver' in p.info['name'] and p.info['username']==getpass.getuser()]
+if pid:
+    os.kill(int(pid[0]),signal.SIGKILL)
+subprocess.Popen(['hydra_nameserver &'], shell=True)
+
+time.sleep(1)
+args = getArgs()
+arg_dict = {}
+
+#loglevel
+loglevel = "info"
+if args.log_level:
+    loglevel = "debug"
+arg_dict['loglevel'] = loglevel
+
+#server_host
+server = args.server_host
+arg_dict['server'] = server
+#Rundir
+curr_dir = os.environ['DistJETPATH_Client']+"/rundir"
+runno = 0
+while os.path.exists(curr_dir+"/Rundir_"+str(runno)):
+	runno = runno+1
+rundir = curr_dir+"/Rundir_"+str(runno)
+os.mkdir(rundir)
+os.chdir(rundir)
+
+# set config file
+
+#loglevel
+if loglevel == "debug":
+    print arg_dict
+if args.test:
+    exit(0)
+if loglevel == "debug":
+    print os.path.abspath('.')
+print("---start---")
+
+print 'mpiexec -n %s -nameserver %s -f %s python %s %s %s %s %s %s'%(args.worker_num,server,os.environ['DistJETPATH_Client']+'/DistJET/hostfile',os.environ['DistJETPATH_Client']+'/bin/worker.py','1','null',loglevel,args.screen,rundir)
+worker = subprocess.Popen(['mpiexec -n %s -nameserver %s -f %s python %s %s %s %s %s %s'%(args.worker_num,server,os.environ['DistJETPATH_Client']+'/DistJET/hostfile',os.environ['DistJETPATH_Client']+'/bin/worker.py','1','null',loglevel, args.screen, rundir)],shell=True)
+
+#clean ssh jobs

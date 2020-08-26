@@ -1,0 +1,190 @@
+mpiexec -nameserver localhost python /junofs/users/liuyan/jupyter/DistJET_v0.3/bin/master.py /junofs/users/liuyan/jupyter/DistJET_v0.3/AnaTest/App_Module.py null info null False /junofs/users/liuyan/jupyter/DistJET_v0.3/bin/Rundir_9
+[2018-11-04 13:58:30,789] MainThread INFO: [App] Load App configure file /junofs/users/liuyan/jupyter/DistJET_v0.3/Application/AnalysisApp/config.ini
+[2018-11-04 13:58:30,790] MainThread INFO: [JunoAPP] Set JunoTop = /afs/ihep.ac.cn/soft/juno/JUNO-ALL-SLC6/Pre-Release/J18v1r1-Pre1
+[2018-11-04 13:58:30,797] MainThread INFO: [AppMgr] APP AnalysisApp is loaded
+[2018-11-04 13:58:30,797] MainThread INFO: [AppMgr] APP AnalysisApp is loaded
+[2018-11-04 13:58:30,824] MainThread INFO: [AppMgr] Get task {'tid': 0, 'data': {}, 'args': {}, 'boot': ['cd /junofs/users/liuyan/jupyter/ProdTest/res/Positron-ch2-uniform/uniform/e+_1.0MeV', 'pwd', 'root -b -l -q /afs/ihep.ac.cn/soft/juno/JUNO-ALL-SLC6/Pre-Release/J18v1r1-Pre1/offline/Examples/Tutorial/share/SimAnalysis/drawDetSim.C+'], 'resdir': ['/junofs/users/liuyan/jupyter/ProdTest/res/Positron-ch2-uniform/uniform/e+_1.0MeV']}
+[2018-11-04 13:58:30,824] MainThread INFO: [AppMgr] Get task {'tid': 0, 'data': {}, 'args': {}, 'boot': ['cd /junofs/users/liuyan/jupyter/ProdTest/res/Positron-ch2-uniform/uniform/e+_1.0MeV', 'pwd', 'root -b -l -q /afs/ihep.ac.cn/soft/juno/JUNO-ALL-SLC6/Pre-Release/J18v1r1-Pre1/offline/Examples/Tutorial/share/SimAnalysis/drawDetSim.C+'], 'resdir': ['/junofs/users/liuyan/jupyter/ProdTest/res/Positron-ch2-uniform/uniform/e+_1.0MeV']}
+[2018-11-04 13:58:30,825] MainThread INFO: [AppMgr] Get task {'tid': 1, 'data': {}, 'args': {}, 'boot': ['cd /junofs/users/liuyan/jupyter/ProdTest/res/Positron-ch2-uniform/uniform/e+_1.0MeV', 'pwd', 'root -b -l -q /afs/ihep.ac.cn/soft/juno/JUNO-ALL-SLC6/Pre-Release/J18v1r1-Pre1/offline/Examples/Tutorial/share/ElecAnalysis/ElecAnalysis.c+'], 'resdir': ['/junofs/users/liuyan/jupyter/ProdTest/res/Positron-ch2-uniform/uniform/e+_1.0MeV']}
+[2018-11-04 13:58:30,825] MainThread INFO: [AppMgr] Get task {'tid': 1, 'data': {}, 'args': {}, 'boot': ['cd /junofs/users/liuyan/jupyter/ProdTest/res/Positron-ch2-uniform/uniform/e+_1.0MeV', 'pwd', 'root -b -l -q /afs/ihep.ac.cn/soft/juno/JUNO-ALL-SLC6/Pre-Release/J18v1r1-Pre1/offline/Examples/Tutorial/share/ElecAnalysis/ElecAnalysis.c+'], 'resdir': ['/junofs/users/liuyan/jupyter/ProdTest/res/Positron-ch2-uniform/uniform/e+_1.0MeV']}
+[2018-11-04 13:58:30,825] MainThread INFO: [AppMgr] Get task {'tid': 2, 'data': {}, 'args': {}, 'boot': ['cd /junofs/users/liuyan/jupyter/ProdTest/res/Positron-ch2-uniform/uniform/e+_1.0MeV', 'export JUNOTEST_CALIB_ANA_OUTPUT=/junofs/users/liuyan/jupyter/ProdTest/res/Positron-ch2-uniform/uniform/e+_1.0MeV/calib_ana', 'pwd', 'bash /afs/ihep.ac.cn/soft/juno/JUNO-ALL-SLC6/Pre-Release/J18v1r1-Pre1/offline/Examples/Tutorial/share/CalibAnalysis/runValidation.sh'], 'resdir': ['/junofs/users/liuyan/jupyter/ProdTest/res/Positron-ch2-uniform/uniform/e+_1.0MeV']}
+[2018-11-04 13:58:30,825] MainThread INFO: [AppMgr] Get task {'tid': 2, 'data': {}, 'args': {}, 'boot': ['cd /junofs/users/liuyan/jupyter/ProdTest/res/Positron-ch2-uniform/uniform/e+_1.0MeV', 'export JUNOTEST_CALIB_ANA_OUTPUT=/junofs/users/liuyan/jupyter/ProdTest/res/Positron-ch2-uniform/uniform/e+_1.0MeV/calib_ana', 'pwd', 'bash /afs/ihep.ac.cn/soft/juno/JUNO-ALL-SLC6/Pre-Release/J18v1r1-Pre1/offline/Examples/Tutorial/share/CalibAnalysis/runValidation.sh'], 'resdir': ['/junofs/users/liuyan/jupyter/ProdTest/res/Positron-ch2-uniform/uniform/e+_1.0MeV']}
+[2018-11-04 13:58:30,826] MainThread INFO: [AppMgr] Get task {'tid': 3, 'data': {}, 'args': {}, 'boot': ['cd /junofs/users/liuyan/jupyter/ProdTest/res/Positron-ch2-uniform/uniform/e+_1.0MeV', 'pwd', 'root -b -l -q /afs/ihep.ac.cn/soft/juno/JUNO-ALL-SLC6/Pre-Release/J18v1r1-Pre1/offline/Examples/Tutorial/share/RecAnalysis/RecAnalysis.c+'], 'resdir': ['/junofs/users/liuyan/jupyter/ProdTest/res/Positron-ch2-uniform/uniform/e+_1.0MeV']}
+[2018-11-04 13:58:30,826] MainThread INFO: [AppMgr] Get task {'tid': 3, 'data': {}, 'args': {}, 'boot': ['cd /junofs/users/liuyan/jupyter/ProdTest/res/Positron-ch2-uniform/uniform/e+_1.0MeV', 'pwd', 'root -b -l -q /afs/ihep.ac.cn/soft/juno/JUNO-ALL-SLC6/Pre-Release/J18v1r1-Pre1/offline/Examples/Tutorial/share/RecAnalysis/RecAnalysis.c+'], 'resdir': ['/junofs/users/liuyan/jupyter/ProdTest/res/Positron-ch2-uniform/uniform/e+_1.0MeV']}
+[2018-11-04 13:58:30,826] MainThread INFO: [AppMgr]: Create 4 task
+[2018-11-04 13:58:30,826] MainThread INFO: [AppMgr]: Create 4 task
+[2018-11-04 13:58:30,827] MainThread INFO: [AppMgr] App 0, Create 4 tasks:{0: <python.Task.Task object at 0x7f29eeef4f10>, 1: <python.Task.Task object at 0x7f29eeef4e90>, 2: <python.Task.Task object at 0x7f29eeef4ed0>, 3: <python.Task.Task object at 0x7f29eeef4f50>}
+[2018-11-04 13:58:30,827] MainThread INFO: [AppMgr] App 0, Create 4 tasks:{0: <python.Task.Task object at 0x7f29eeef4f10>, 1: <python.Task.Task object at 0x7f29eeef4e90>, 2: <python.Task.Task object at 0x7f29eeef4ed0>, 3: <python.Task.Task object at 0x7f29eeef4f50>}
+[2018-11-04 13:58:30,827] MainThread INFO: [Scheduler] Load tasks created by AppMgr
+[2018-11-04 13:58:30,827] MainThread INFO: [Scheduler] Load tasks created by AppMgr
+[2018-11-04 13:58:30,827] MainThread INFO: [Scheduler] Load 4 tasks, add 4 task to queue
+[2018-11-04 13:58:30,827] MainThread INFO: [Scheduler] Load 4 tasks, add 4 task to queue
+SETUP: Find Boost
+['/junofs/users/liuyan/jupyter/DistJET_v0.3/AnaTest/App_Module.py', 'null', 'info', 'null', 'False', '/junofs/users/liuyan/jupyter/DistJET_v0.3/bin/Rundir_8']
+load config file
+log Registry add console handler
+log AppMgr add console handler
+log AppMgr add console handler
+log WatchDog_Log add console handler
+log Handler add console handler
+log Master add console handler
+log Health add console handler
+log BaseThread add console handler
+log AnalysisApp add console handler
+[<Application.AnalysisApp.AnaApp.AnaApp object at 0x7f29f43112d0>]
+@master: Cannot find configuration file [/junofs/users/liuyan/jupyter/DistJET_v0.3/bin/Rundir_8/null]
+set rundir = /junofs/users/liuyan/jupyter/DistJET_v0.3/bin/Rundir_8
+load config file
+rundir=/junofs/users/liuyan/jupyter/DistJET_v0.3/bin/Rundir_8
+load config file
+[BaseThread]: create new thread : DistJET.BaseThread.WatchDog
+[BaseThread]: create new thread : DistJET.BaseThread.Handler
+--------------------Server init start-------------------
+[Server]: support thread level= 3
+[Server]: Host: lxslc603.ihep.ac.cn,Proc: 0, Server initialize...
+[Server]: Host: lxslc603.ihep.ac.cn,Proc: 0,Server opening port on <tag#0$description#lxslc603.ihep.ac.cn$port#37097$ifname#202.122.33.187$>
+[Server]: Write port into file finished, path = /junofs/users/liuyan/jupyter/DistJET_v0.3/bin/Rundir_8/port.txt
+[Server]: publish service <Default>
+[Server]: receive thread start...
+[Server]: accept thread start...[Server] host: lxslc603.ihep.ac.cn, accept connection thread start...
+
+--------------------Server init finish--------------------
+[2018-11-04 13:58:30,843] MainThread INFO: [MPI server]: start server with service_name=Default
+@master: start running
+[2018-11-04 13:58:30,850] DistJET.BaseThread.WatchDog INFO: Control Thread start...
+[2018-11-04 13:58:30,852] DistJET.BaseThread.WatchDog INFO: [Master] Worker status = {}
+[2018-11-04 13:58:30,851] DistJET.BaseThread.Handler INFO: Handler thread start...
+[2018-11-04 13:58:31,787] MainThread INFO: [Agent] Running on host: lxslc603.ihep.ac.cn
+SETUP: find Boost
+load config file
+load config file
+rundir = /junofs/users/liuyan/jupyter/DistJET_v0.3/bin/Rundir_8
+log BaseThread add console handler
+log Registry add console handler
+log Worker_a4e15b9f-2a79-462f-ad7d-18eb967695fc add console handler
+load config file
+--------------------Client init start--------------------
+[Client]: client initail...
+[2018-11-04 13:58:31,791] MainThread INFO: [Agent] Running on host: lxslc603.ihep.ac.cn
+SETUP: find Boost
+load config file
+load config file
+rundir = /junofs/users/liuyan/jupyter/DistJET_v0.3/bin/Rundir_8
+log BaseThread add console handler
+log Registry add console handler
+log Worker_dac3f312-53e6-4a6d-81fb-f86f33e9516a add console handler
+load config file
+--------------------Client init start--------------------
+[Client]: client initail...
+[Client_0]: support thread level= 3
+[Client_1]: support thread level= 3
+[Client] Find port file in path = /junofs/users/liuyan/jupyter/DistJET_v0.3/bin/Rundir_8/port.txt
+[Client] Find port file in path = /junofs/users/liuyan/jupyter/DistJET_v0.3/bin/Rundir_8/port.txt
+[Client_0]: service found on port:<tag#0$description#lxslc603.ihep.ac.cn$port#37097$ifname#202.122.33.187$>
+[Client_1]: service found on port:<tag#0$description#lxslc603.ihep.ac.cn$port#37097$ifname#202.122.33.187$>
+[Client_0]: client connect to server, comm = -2080374779
+[Client_0]: recv thread start....
+--------------------Client 0 init finish--------------------
+[BaseThread]: create new thread : DistJET.BaseThread.HeartbeatThread
+[Client_1]: client connect to server, comm = -2080374781
+[Client_1]: recv thread start....
+--------------------Client 1 init finish--------------------
+[2018-11-04 13:58:31,807] MainThread INFO: [Agent] WorkerAgent run...
+[BaseThread]: create new thread : DistJET.BaseThread.HeartbeatThread
+[2018-11-04 13:58:31,808] MainThread INFO: [Agent] WorkerAgent run...
+[2018-11-04 13:58:31,809] MainThread INFO: [WorkerAgent] HeartBeat thread start...
+[2018-11-04 13:58:31,810] MainThread INFO: [WorkerAgent] HeartBeat thread start...
+[2018-11-04 13:58:31,840] DistJET.BaseThread.Handler INFO: [Master] Receive REGISTY msg = {1: {'capacity': 1}, 'flag': 'FP', 'ctime': 1541311111.808519, 'uuid': 'dac3f312-53e6-4a6d-81fb-f86f33e9516a'}
+[2018-11-04 13:58:31,841] DistJET.BaseThread.Handler INFO: [Master] register worker dac3f312-53e6-4a6d-81fb-f86f33e9516a
+load config file
+[2018-11-04 13:58:31,843] DistJET.BaseThread.Handler INFO: [WorkerRegistry]new worker registered: wid=1, worker_uuid=dac3f312-53e6-4a6d-81fb-f86f33e9516a
+[2018-11-04 13:58:31,844] DistJET.BaseThread.Handler INFO: [Master] Receive REGISTY msg = {1: {'capacity': 1}, 'flag': 'FP', 'ctime': 1541311111.809274, 'uuid': 'a4e15b9f-2a79-462f-ad7d-18eb967695fc'}
+[2018-11-04 13:58:31,845] DistJET.BaseThread.Handler INFO: [Master] register worker a4e15b9f-2a79-462f-ad7d-18eb967695fc
+load config file
+[2018-11-04 13:58:31,847] DistJET.BaseThread.Handler INFO: [WorkerRegistry]new worker registered: wid=2, worker_uuid=a4e15b9f-2a79-462f-ad7d-18eb967695fc
+[2018-11-04 13:58:31,911] MainThread INFO: [WorkerAgent] Receive Registry_ACK msg = {'wid': 1, 'init': <python.Task.Task object at 0x7f2787c08590>, 'wmp': None, 'uuid': 'dac3f312-53e6-4a6d-81fb-f86f33e9516a', 'appid': 0}
+[2018-11-04 13:58:31,911] MainThread WARNING: [Agent] No specific worker input, use default
+[2018-11-04 13:58:31,911] MainThread INFO: [Agent] init_task:<python.Task.Task object at 0x7f2787c08590>, boot=['. /afs/ihep.ac.cn/soft/juno/JUNO-ALL-SLC6/Pre-Release/J18v1r1-Pre1/setup.sh']
+[2018-11-04 13:58:31,912] MainThread INFO: [Agent] Start up worker and initialize
+[2018-11-04 13:58:31,912] MainThread INFO: [WorkerAgent] Receive Registry_ACK msg = {'wid': 2, 'init': <python.Task.Task object at 0x7fd2a60a8590>, 'wmp': None, 'uuid': 'a4e15b9f-2a79-462f-ad7d-18eb967695fc', 'appid': 0}
+[BaseThread]: create new thread : DistJET.BaseThread.worker_0
+[2018-11-04 13:58:31,912] MainThread WARNING: [Agent] No specific worker input, use default
+[2018-11-04 13:58:31,912] MainThread INFO: [Agent] Worker 0 start
+[2018-11-04 13:58:31,912] MainThread INFO: [Agent] init_task:<python.Task.Task object at 0x7fd2a60a8590>, boot=['. /afs/ihep.ac.cn/soft/juno/JUNO-ALL-SLC6/Pre-Release/J18v1r1-Pre1/setup.sh']
+[2018-11-04 13:58:31,913] MainThread INFO: [Agent] Start up worker and initialize
+[BaseThread]: create new thread : DistJET.BaseThread.worker_0
+[2018-11-04 13:58:31,913] MainThread INFO: [Agent] Worker 0 start
+[2018-11-04 13:58:31,913] DistJET.BaseThread.worker_0 INFO: [Worker_0] Start to setup...
+[2018-11-04 13:58:31,913] DistJET.BaseThread.worker_0 INFO: [Worker_0] Start to setup...
+<worker has create process>
+<worker has create process>
+[2018-11-04 13:58:35,859] DistJET.BaseThread.WatchDog INFO: [Master] Finalize all worker
+[2018-11-04 13:58:35,860] DistJET.BaseThread.WatchDog INFO: [Master] Worker status = {1: 'INITIALIZING', 2: 'INITIALIZING'}
+[2018-11-04 13:58:35,922] MainThread INFO: [WorkerAgent] Receive APP_FIN msg = <python.Task.Task object at 0x7f2778160650>
+[2018-11-04 13:58:35,924] MainThread INFO: [WorkerAgent] Receive APP_FIN msg = <python.Task.Task object at 0x7fd294160590>
+[2018-11-04 13:58:36,030] DistJET.BaseThread.worker_0 INFO: [Worker_0] Worker setup successfully
+[2018-11-04 13:58:36,031] DistJET.BaseThread.worker_0 INFO: [Agent] Feed back app init result
+[2018-11-04 13:58:36,050] DistJET.BaseThread.worker_0 INFO: [Worker_0] Worker setup successfully
+[2018-11-04 13:58:36,050] DistJET.BaseThread.worker_0 INFO: [Agent] Feed back app init result
+<process> exiting...
+[2018-11-04 13:58:36,132] Thread-1 INFO: [Worker_0] Process finalize, status=SUCCESS
+[2018-11-04 13:58:36,132] Thread-1 INFO: [Agent] Worker 0 finalized, remove from list
+[2018-11-04 13:58:36,133] DistJET.BaseThread.worker_0 INFO: [Worker_0] Stop...
+[2018-11-04 13:58:36,134] DistJET.BaseThread.worker_0 INFO: [Worker_0] Exit run method
+<process> exiting...
+[2018-11-04 13:58:36,151] Thread-1 INFO: [Worker_0] Process finalize, status=SUCCESS
+[2018-11-04 13:58:36,151] Thread-1 INFO: [Agent] Worker 0 finalized, remove from list
+[2018-11-04 13:58:36,153] DistJET.BaseThread.worker_0 INFO: [Worker_0] Stop...
+[2018-11-04 13:58:36,153] DistJET.BaseThread.worker_0 INFO: [Worker_0] Exit run method
+[2018-11-04 13:58:36,163] DistJET.BaseThread.Handler INFO: [Master] From worker 2 receive a App_INI msg = {'recode': 0, 'errmsg': 'SUCCESS'}
+[2018-11-04 13:58:36,163] DistJET.BaseThread.Handler INFO: worker 2 initialize successfully
+[2018-11-04 13:58:36,163] DistJET.BaseThread.Handler INFO: [Master] From worker 2 receive a APP_FIN msg = {'recode': 0, 'errmsg': 'SUCCESS'}
+[2018-11-04 13:58:36,164] DistJET.BaseThread.Handler INFO: [Master] Have finalized worker 2
+[2018-11-04 13:58:36,226] MainThread INFO: [WorkerAgent] Receive LOGOUT msg = 
+[2018-11-04 13:58:36,226] MainThread INFO: [WorkerAgent] HeartBeat stop...
+[2018-11-04 13:58:36,248] DistJET.BaseThread.Handler INFO: [Master] From worker 1 receive a App_INI msg = {'recode': 0, 'errmsg': 'SUCCESS'}
+[2018-11-04 13:58:36,248] DistJET.BaseThread.Handler INFO: worker 1 initialize successfully
+--------------------stop Client 1--------------------
+[Server] worker :a4e15b9f-2a79-462f-ad7d-18eb967695fc require disconnect
+[Client_1]: send complete...
+[Client_1]: recv thread stop, exit code=0
+[Client_1]: disconnected...
+[2018-11-04 13:58:36,263] DistJET.BaseThread.Handler INFO: [Master] From worker 2 Receive DISCONNECT msg = {'wid': 2, 'uuid': 'a4e15b9f-2a79-462f-ad7d-18eb967695fc', 'flag': 'LP', 'Task': {}, 'health': {}, 'ctime': 1541311116.262168}
+[2018-11-04 13:58:36,263] MainThread INFO: [Master] Agent disconnect
+[2018-11-04 13:58:36,263] DistJET.BaseThread.Handler INFO: [WorkerRegistry]worker removed: wid=2
+[2018-11-04 13:58:36,264] DistJET.BaseThread.Handler INFO: [Scheduler] Remove worker 2...
+[2018-11-04 13:58:36,264] DistJET.BaseThread.Handler INFO: [Scheduler] Remove worker 2...
+[2018-11-04 13:58:36,348] DistJET.BaseThread.Handler INFO: [Master] From worker 1 receive a APP_FIN msg = {'recode': 0, 'errmsg': 'SUCCESS'}
+[2018-11-04 13:58:36,349] DistJET.BaseThread.Handler INFO: [Master] Have finalized worker 1
+[2018-11-04 13:58:36,424] MainThread INFO: [WorkerAgent] Receive LOGOUT msg = 
+[2018-11-04 13:58:36,424] MainThread INFO: [WorkerAgent] HeartBeat stop...
+--------------------stop Client 0--------------------
+[Client_0]: send complete...
+[Client_[Server] worker :dac3f312-53e6-4a6d-81fb-f86f33e9516a require disconnect
+0]: recv thread stop, exit code=0
+[Client_0]: disconnected...
+[2018-11-04 13:58:36,449] DistJET.BaseThread.Handler INFO: [Master] From worker 1 Receive DISCONNECT msg = {'wid': 1, 'uuid': 'dac3f312-53e6-4a6d-81fb-f86f33e9516a', 'flag': 'LP', 'Task': {}, 'health': {}, 'ctime': 1541311116.448564}
+[2018-11-04 13:58:36,449] MainThread INFO: [Master] Agent disconnect
+[2018-11-04 13:58:36,450] DistJET.BaseThread.Handler INFO: [WorkerRegistry]worker removed: wid=1
+--------------------Client 1 stop finish--------------------
+--- Master stop---
+[2018-11-04 13:58:36,450] DistJET.BaseThread.Handler INFO: [Scheduler] Remove worker 1...
+--------------------Client 0 stop finish--------------------
+[2018-11-04 13:58:36,450] MainThread INFO: [Master] Recoder has finalized
+[2018-11-04 13:58:36,450] MainThread INFO: [WorkerAgent] Agent stop..., exit code = 0
+@agent: Agent exit, remains 1 thread running, threads list = [<_MainThread(MainThread, started 140542873933568)>]
+[2018-11-04 13:58:36,450] MainThread INFO: [WorkerAgent] Agent stop..., exit code = 0
+@agent: Agent exit, remains 1 thread running, threads list = [<_MainThread(MainThread, started 139807926359808)>]
+[2018-11-04 13:58:36,450] DistJET.BaseThread.Handler INFO: [Scheduler] Remove worker 1...
+[2018-11-04 13:58:40,869] MainThread INFO: [Master] Control Thread has joined
+[2018-11-04 13:58:40,869] DistJET.BaseThread.Handler INFO: Handler thread stop...
+[2018-11-04 13:58:40,870] MainThread INFO: [Master] Handler Thread has joined
+--------------------Server stop start--------------------
+[Server]: Ready to stop...
+[Server]: Unpublish service name...
+[Server] host: lxslc603.ihep.ac.cn, accept connection thread stop...tmp_comm = 
+-2080374781
+--------------------Server stop finish--------------------
+[2018-11-04 13:58:40,875] MainThread INFO: [Master] Server stop
+mpiexec -nameserver localhost python /junofs/users/liuyan/jupyter/DistJET_v0.3/bin/master.py /junofs/users/liuyan/jupyter/DistJET_v0.3/AnaTest/App_Module.py null info null False /junofs/users/liuyan/jupyter/DistJET_v0.3/bin/Rundir_8
+mpiexec -n 2 -nameserver localhost -f /afs/ihep.ac.cn/users/l/liuyan/.DistJET/hostfile python /junofs/users/liuyan/jupyter/DistJET_v0.3/bin/worker.py 1 null info False /junofs/users/liuyan/jupyter/DistJET_v0.3/bin/Rundir_8
