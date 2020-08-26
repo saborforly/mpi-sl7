@@ -13,5 +13,14 @@ export JUNOTOP=/yourpath/mpi-sl7/juno:$JUNOTOP
 export LD_LIBRARY_PATH=/yourpath/mpi-sl7/software/boost/lib:$LD_LIBRARY_PATH    
 export LD_LIBRARY_PATH=/yourpath/mpi-sl7/software/mpich/lib:$LD_LIBRARY_PATH    
 ## 3.启动
+
+#修改启动脚本
+vim start_master.sh  
+   python /yourpath/bin/master.py /yourpath/Application/AnalysisApp/App_Module.py /yourpath/DistJET/config.ini debug /yourpath/Application/AnalysisApp/config.ini   
+  vim /yourpath/DistJET/config.ini   #修改rundir  
+ 
+vim start_worker.sh 
+   python /yourpath/bin/worker.py 1 /yourpath/DistJET/config.ini debug  
+   
 source start_master.sh    
 source start_worker.sh    
